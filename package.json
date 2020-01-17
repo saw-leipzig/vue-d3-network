@@ -1,6 +1,6 @@
 {
   "name": "vue-d3-network",
-  "version": "0.1.28",
+  "version": "0.1.29",
   "description": "Vue component to graph networks using d3-force",
   "main": "dist/vue-d3-network.umd.js",
   "scripts": {
@@ -15,7 +15,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/emiliorizzo/vue-d3-network"
+    "url": "https://github.com/aitgelion/vue-d3-network"
   },
   "bugs": {
     "url": "https://github.com/emiliorizzo/vue-d3-network/issues"
@@ -38,7 +38,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.4.0",
     "@vue/cli-plugin-eslint": "^3.4.0",
-    "@vue/cli-service": "^3.4.0",
+    "@vue/cli-service": "^4.1.2",
     "@vue/eslint-config-standard": "^3.0.0-rc.5",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
