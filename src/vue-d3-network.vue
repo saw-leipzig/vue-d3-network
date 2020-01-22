@@ -402,8 +402,10 @@ export default {
     dragended () {
       const event = d3.getEvent()
       if (!event.active) this.simulation.alphaTarget(0)
-      event.subject.fx = null
-      event.subject.fy = null
+      if (event.subject && !event.subject.pinned) {
+        event.subject.fx = null
+        event.subject.fy = null
+      }
     },
     // -- Render helpers
     nodeClick (event, node) {
