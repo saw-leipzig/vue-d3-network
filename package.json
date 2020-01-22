@@ -6,10 +6,10 @@
   "scripts": {
     "example": "vue-cli-service build --dest example",
     "dev": "vue-cli-service serve",
-    "build": "npm run build-component && npm run clean-dist",
+    "build": "yarn build-component",
     "build-component": "vue-cli-service build --target lib --name vue-d3-network src/vue-d3-network.vue",
     "lint": "vue-cli-service lint",
-    "clean-dist": "rm dist/demo.html"
+    "clean-dist": "del dist/demo.html"
   },
   "author": "emi",
   "license": "MIT",
