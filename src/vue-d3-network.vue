@@ -8,7 +8,7 @@ import canvasRenderer from './components/canvasRenderer.vue'
 import saveImage from './lib/js/saveImage.js'
 import svgExport from './lib/js/svgExport.js'
 const getEvent = () => select.event
-const d3 = Object.assign({getEvent}, forceSimulation, select, drag, zoom)
+const d3 = Object.assign({ getEvent }, forceSimulation, select, drag, zoom)
 
 export default {
   name: 'd3-network',
@@ -49,6 +49,10 @@ export default {
           links: {}
         }
       }
+    },
+    zoomWheelCtrl: {
+      type: Boolean,
+      default: true
     }
   },
   data () {
@@ -334,8 +338,24 @@ export default {
     registerInteractions () {
       const selector = this.canvas ? 'canvas' : 'svg'
       const surface = d3.select(this.$el.querySelector(selector))
+      let self = this
       surface.call(d3.drag().subject(this.dragsubject).on('start', this.dragstarted).on('drag', this.dragged).on('end', this.dragended))
-      surface.call(d3.zoom().on('zoom', this.zoomActions))
+      surface.call(d3.zoom().filter(function () {
+        if (self.zoomWheelCtrl) {
+          if (d3.getEvent().type === 'wheel') {
+            if (d3.getEvent().ctrlKey) {
+              return true
+            } else {
+              self.$emit('zoom-wheel-blocked')
+              return false
+            }
+          } else {
+            return true
+          }
+        } else {
+          return !d3.getEvent().ctrlKey && !d3.getEvent().button
+        }
+      }).on('zoom', this.zoomActions))
       surface.on('click', this.dragClick)
     },
     zoomActions () {
