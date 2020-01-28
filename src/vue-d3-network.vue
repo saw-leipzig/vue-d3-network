@@ -52,7 +52,11 @@ export default {
     },
     zoomWheelCtrl: {
       type: Boolean,
-      default: true
+      default: false
+    },
+    moveTouchMultipleFingers: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -341,12 +345,20 @@ export default {
       let self = this
       surface.call(d3.drag().subject(this.dragsubject).on('start', this.dragstarted).on('drag', this.dragged).on('end', this.dragended))
       surface.call(d3.zoom().filter(function () {
-        if (self.zoomWheelCtrl) {
+        if (self.zoomWheelCtrl || self.moveTouchMultipleFingers) {
           if (d3.getEvent().type === 'wheel') {
             if (d3.getEvent().ctrlKey) {
               return true
             } else {
               self.$emit('zoom-wheel-blocked')
+              return false
+            }
+          } else if (d3.getEvent().type === 'touchstart') {
+            let fingers = d3.getEvent().targetTouches.length
+            if (fingers > 1) {
+              return true
+            } else {
+              self.$emit('single-finger-blocked')
               return false
             }
           } else {
@@ -435,7 +447,11 @@ export default {
         exportFunc = this.$refs.svg.svgScreenShot
         args = [toSVG, bgColor, svgAllCss]
       }
-      if (toSVG) name = name || 'export.svg'
+      if (toSVG) {
+        name = name || 'export.svg'
+      } else {
+        name = name || 'export.png'
+      }
 
       exportFunc((err, url) => {
         if (!err) {
