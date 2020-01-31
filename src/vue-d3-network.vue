@@ -344,33 +344,36 @@ export default {
       const surface = d3.select(this.$el.querySelector(selector))
       let self = this
       surface.call(d3.drag().subject(this.dragsubject).on('start', this.dragstarted).on('drag', this.dragged).on('end', this.dragended))
-      surface.call(d3.zoom().filter(function () {
-        if (self.zoomWheelCtrl || self.moveTouchMultipleFingers) {
-          if (d3.getEvent().type === 'wheel') {
-            if (d3.getEvent().ctrlKey) {
-              return true
-            } else {
-              self.$emit('zoom-wheel-blocked')
-              return false
-            }
-          } else if (d3.getEvent().type === 'touchstart') {
-            let fingers = d3.getEvent().targetTouches.length
-            if (fingers > 1) {
-              return true
-            } else {
-              self.$emit('single-finger-blocked')
-              return false
-            }
-          } else {
+      let zoomBehaviour = d3.zoom()
+      surface.call(zoomBehaviour.filter(function () {
+        if (self.zoomWheelCtrl && d3.getEvent().type === 'wheel') {
+          if (d3.getEvent().ctrlKey) {
             return true
+          } else {
+            self.$emit('zoom-wheel-blocked')
+            return false
+          }
+        } else if (self.moveTouchMultipleFingers && d3.getEvent().type === 'touchstart') {
+          let fingers = d3.getEvent().targetTouches.length
+          if (fingers > 1) {
+            self.$emit('single-finger-blocked-cancel')
+            return true
+          } else {
+            self.$emit('single-finger-blocked')
+            return false
           }
         } else {
           return !d3.getEvent().ctrlKey && !d3.getEvent().button
         }
-      }).on('zoom', this.zoomActions))
+      }))
+      surface.call(zoomBehaviour.on('zoom', this.zoomActions))
+      surface.style('touch-action', 'pan-y')
       surface.on('click', this.dragClick)
     },
     zoomActions () {
+      if (this.moveTouchMultipleFingers && d3.getEvent().sourceEvent && d3.getEvent().sourceEvent.type === 'touchmove' && d3.getEvent().sourceEvent.targetTouches.length === 1) {
+        return
+      }
       this.transform = d3.getEvent().transform
     },
     dragsubject () {
@@ -395,7 +398,10 @@ export default {
     },
     dragClick () {
       const event = d3.getEvent()
-      if (event.defaultPrevented || this.nodeClicked === null) return
+      if (event.defaultPrevented || this.nodeClicked === null) {
+        this.$emit('svg-click', event)
+        return
+      }
       this.nodeClick(event, this.nodeClicked)
     },
     dragstarted () {
