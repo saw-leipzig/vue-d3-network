@@ -16,7 +16,7 @@
             @click='emit("linkClick",[$event,link])'
             @touchstart.passive='emit("linkClick",[$event,link])'
             v-bind='linkAttrs(link)'
-            :class='linkClass(link.id)'
+            :class='linkClass(link)'
             :style='linkStyle(link)'
             )
 
@@ -51,7 +51,9 @@
 
       //-> Links Labels
       g.labels#link-labels(v-if='linkLabels')
-        text.link-label(v-for="link in links" :font-size="fontSize" )
+        text.link-label(v-for="link in links"
+        :font-size="fontSize"
+        :class='(link._labelClass) ? link._labelClass : ""')
           textPath(v-bind:xlink:href="'#' + link.id" startOffset= "50%") {{ link.name }}
 
       //- -> Node Labels
@@ -123,9 +125,12 @@ export default {
         cb(null, svgExport.save(svg))
       }
     },
-    linkClass (linkId) {
-      let cssClass = ['link']
-      if (this.linksSelected.hasOwnProperty(linkId)) {
+    linkClass (link) {
+      let cssClass = (link._cssClass) ? link._cssClass : []
+      if (!Array.isArray(cssClass)) cssClass = [cssClass]
+      cssClass.push('link')
+
+      if (link && this.linksSelected.hasOwnProperty(link.id)) {
         cssClass.push('selected')
       }
       if (!this.strLinks) {
