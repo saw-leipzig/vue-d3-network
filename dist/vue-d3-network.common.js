@@ -10412,12 +10412,12 @@ var initialRadius = 10,
 
 
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7d1c1730-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/svgRenderer.vue?vue&type=template&id=1c3c6930&lang=pug&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{ref:"svg",staticClass:"net-svg",attrs:{"xmlns":"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink","width":_vm.size.w,"height":_vm.size.h}},[_c('g',{attrs:{"transform":_vm.transform}},[_c('g',{staticClass:"links",attrs:{"id":"l-links"}},_vm._l((_vm.links),function(link){return _c('path',_vm._b({class:_vm.linkClass(link.id),style:(_vm.linkStyle(link)),attrs:{"d":_vm.linkPath(link),"id":link.id},on:{"click":function($event){return _vm.emit("linkClick",[$event,link])},"&touchstart":function($event){return _vm.emit("linkClick",[$event,link])}}},'path',_vm.linkAttrs(link),false))}),0),(!_vm.noNodes)?_c('g',{staticClass:"nodes",attrs:{"id":"l-nodes"}},[_vm._l((_vm.nodes),function(node,key){return [(_vm.svgIcon(node))?_c('svg',_vm._b({key:key,class:_vm.nodeClass(node,["node-svg"]),style:(_vm.nodeStyle(node)),attrs:{"viewBox":_vm.svgIcon(node).attrs.viewBox,"width":_vm.getNodeSize(node, "width"),"height":_vm.getNodeSize(node, "height"),"x":node.x - _vm.getNodeSize(node, "width") / 2,"y":node.y - _vm.getNodeSize(node, "height") / 2,"title":node.name},domProps:{"innerHTML":_vm._s(_vm.svgIcon(node).data)}},'svg',node._svgAttrs,false)):_c('circle',_vm._b({key:key,class:_vm.nodeClass(node),style:(_vm.nodeStyle(node)),attrs:{"r":_vm.getNodeSize(node) / 2,"cx":node.x,"cy":node.y,"title":node.name}},'circle',node._svgAttrs,false))]})],2):_vm._e(),(_vm.linkLabels)?_c('g',{staticClass:"labels",attrs:{"id":"link-labels"}},_vm._l((_vm.links),function(link){return _c('text',{staticClass:"link-label",attrs:{"font-size":_vm.fontSize}},[_c('textPath',{attrs:{"xlink:href":'#' + link.id,"startOffset":"50%"}},[_vm._v(_vm._s(link.name))])])}),0):_vm._e(),(_vm.nodeLabels)?_c('g',{staticClass:"labels",attrs:{"id":"node-labels"}},_vm._l((_vm.nodes),function(node){return _c('text',{staticClass:"node-label",class:(node._labelClass) ? node._labelClass : "",attrs:{"x":node.x + (_vm.getNodeSize(node) / 2) + (_vm.fontSize / 2),"y":node.y + _vm.labelOffset.y,"font-size":_vm.fontSize,"stroke-width":_vm.fontSize / 8}},[_vm._v(_vm._s(node.name))])}),0):_vm._e()])])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7d1c1730-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/svgRenderer.vue?vue&type=template&id=1c5ff9e8&lang=pug&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{ref:"svg",staticClass:"net-svg",attrs:{"xmlns":"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink","width":_vm.size.w,"height":_vm.size.h}},[_c('g',{attrs:{"transform":_vm.transform}},[_c('g',{staticClass:"links",attrs:{"id":"l-links"}},_vm._l((_vm.links),function(link){return _c('path',_vm._b({class:_vm.linkClass(link),style:(_vm.linkStyle(link)),attrs:{"d":_vm.linkPath(link),"id":link.id},on:{"click":function($event){return _vm.emit("linkClick",[$event,link])},"&touchstart":function($event){return _vm.emit("linkClick",[$event,link])}}},'path',_vm.linkAttrs(link),false))}),0),(!_vm.noNodes)?_c('g',{staticClass:"nodes",attrs:{"id":"l-nodes"}},[_vm._l((_vm.nodes),function(node,key){return [(_vm.svgIcon(node))?_c('svg',_vm._b({key:key,class:_vm.nodeClass(node,["node-svg"]),style:(_vm.nodeStyle(node)),attrs:{"viewBox":_vm.svgIcon(node).attrs.viewBox,"width":_vm.getNodeSize(node, "width"),"height":_vm.getNodeSize(node, "height"),"x":node.x - _vm.getNodeSize(node, "width") / 2,"y":node.y - _vm.getNodeSize(node, "height") / 2,"title":node.name},domProps:{"innerHTML":_vm._s(_vm.svgIcon(node).data)}},'svg',node._svgAttrs,false)):_c('circle',_vm._b({key:key,class:_vm.nodeClass(node),style:(_vm.nodeStyle(node)),attrs:{"r":_vm.getNodeSize(node) / 2,"cx":node.x,"cy":node.y,"title":node.name}},'circle',node._svgAttrs,false))]})],2):_vm._e(),(_vm.linkLabels)?_c('g',{staticClass:"labels",attrs:{"id":"link-labels"}},_vm._l((_vm.links),function(link){return _c('text',{staticClass:"link-label",class:(link._labelClass) ? link._labelClass : "",attrs:{"font-size":_vm.fontSize}},[_c('textPath',{attrs:{"xlink:href":'#' + link.id,"startOffset":"50%"}},[_vm._v(_vm._s(link.name))])])}),0):_vm._e(),(_vm.nodeLabels)?_c('g',{staticClass:"labels",attrs:{"id":"node-labels"}},_vm._l((_vm.nodes),function(node){return _c('text',{staticClass:"node-label",class:(node._labelClass) ? node._labelClass : "",attrs:{"x":node.x + (_vm.getNodeSize(node) / 2) + (_vm.fontSize / 2),"y":node.y + _vm.labelOffset.y,"font-size":_vm.fontSize,"stroke-width":_vm.fontSize / 8}},[_vm._v(_vm._s(node.name))])}),0):_vm._e()])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/svgRenderer.vue?vue&type=template&id=1c3c6930&lang=pug&
+// CONCATENATED MODULE: ./src/components/svgRenderer.vue?vue&type=template&id=1c5ff9e8&lang=pug&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.replace.js
 var es6_regexp_replace = __webpack_require__("a481");
@@ -10777,6 +10777,8 @@ var es7_object_values = __webpack_require__("8615");
 //
 //
 //
+//
+//
 
 /* harmony default export */ var svgRenderervue_type_script_lang_js_ = ({
   name: 'svg-renderer',
@@ -10818,10 +10820,12 @@ var es7_object_values = __webpack_require__("8615");
         cb(null, svgExport.save(svg));
       }
     },
-    linkClass: function linkClass(linkId) {
-      var cssClass = ['link'];
+    linkClass: function linkClass(link) {
+      var cssClass = link._cssClass ? link._cssClass : [];
+      if (!Array.isArray(cssClass)) cssClass = [cssClass];
+      cssClass.push('link');
 
-      if (this.linksSelected.hasOwnProperty(linkId)) {
+      if (link && this.linksSelected.hasOwnProperty(link.id)) {
         cssClass.push('selected');
       }
 
@@ -12028,34 +12032,38 @@ var d3 = Object.assign({
       var surface = d3.select(this.$el.querySelector(selector));
       var self = this;
       surface.call(d3.drag().subject(this.dragsubject).on('start', this.dragstarted).on('drag', this.dragged).on('end', this.dragended));
-      surface.call(d3.zoom().filter(function () {
-        if (self.zoomWheelCtrl || self.moveTouchMultipleFingers) {
-          if (d3.getEvent().type === 'wheel') {
-            if (d3.getEvent().ctrlKey) {
-              return true;
-            } else {
-              self.$emit('zoom-wheel-blocked');
-              return false;
-            }
-          } else if (d3.getEvent().type === 'touchstart') {
-            var fingers = d3.getEvent().targetTouches.length;
-
-            if (fingers > 1) {
-              return true;
-            } else {
-              self.$emit('single-finger-blocked');
-              return false;
-            }
-          } else {
+      var zoomBehaviour = d3.zoom();
+      surface.call(zoomBehaviour.filter(function () {
+        if (self.zoomWheelCtrl && d3.getEvent().type === 'wheel') {
+          if (d3.getEvent().ctrlKey) {
             return true;
+          } else {
+            self.$emit('zoom-wheel-blocked');
+            return false;
+          }
+        } else if (self.moveTouchMultipleFingers && d3.getEvent().type === 'touchstart') {
+          var fingers = d3.getEvent().targetTouches.length;
+
+          if (fingers > 1) {
+            self.$emit('single-finger-blocked-cancel');
+            return true;
+          } else {
+            self.$emit('single-finger-blocked');
+            return false;
           }
         } else {
           return !d3.getEvent().ctrlKey && !d3.getEvent().button;
         }
-      }).on('zoom', this.zoomActions));
+      }));
+      surface.call(zoomBehaviour.on('zoom', this.zoomActions));
+      surface.style('touch-action', 'pan-y');
       surface.on('click', this.dragClick);
     },
     zoomActions: function zoomActions() {
+      if (this.moveTouchMultipleFingers && d3.getEvent().sourceEvent && d3.getEvent().sourceEvent.type === 'touchmove' && d3.getEvent().sourceEvent.targetTouches.length === 1) {
+        return;
+      }
+
       this.transform = d3.getEvent().transform;
     },
     dragsubject: function dragsubject() {
@@ -12083,7 +12091,12 @@ var d3 = Object.assign({
     },
     dragClick: function dragClick() {
       var event = d3.getEvent();
-      if (event.defaultPrevented || this.nodeClicked === null) return;
+
+      if (event.defaultPrevented || this.nodeClicked === null) {
+        this.$emit('svg-click', event);
+        return;
+      }
+
       this.nodeClick(event, this.nodeClicked);
     },
     dragstarted: function dragstarted() {
